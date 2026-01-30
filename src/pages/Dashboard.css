@@ -1,0 +1,363 @@
+/* Dashboard.css - Compressed Version */
+
+.dashboard-container {
+  padding: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-right: 8px;
+}
+
+.dashboard-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.refresh-button-sm {
+  padding: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-button-sm:hover {
+  background: #e2e8f0;
+  color: #475569;
+  transform: rotate(90deg);
+}
+
+/* Compact Stats Grid */
+.stats-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stats-card-compact {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stats-card-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stats-icon-compact {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.stats-card-compact.blue .stats-icon-compact {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+}
+
+.stats-card-compact.green .stats-icon-compact {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.stats-card-compact.purple .stats-icon-compact {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+}
+
+.stats-card-compact.orange .stats-icon-compact {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.stats-info-compact {
+  flex: 1;
+  min-width: 0;
+}
+
+.stats-value-compact {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  line-height: 1;
+}
+
+.stats-title-compact {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 2px 0;
+}
+
+.stats-subtitle-compact {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact Cards */
+.dashboard-card-compact {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-title-compact {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.view-button {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3b82f6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.view-button:hover {
+  background: #f1f5f9;
+}
+
+/* Compact Table */
+.compact-table-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.compact-table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.compact-table thead th {
+  text-align: left;
+  padding: 8px 0;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 12px;
+}
+
+.compact-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.compact-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.compact-table tbody td {
+  padding: 10px 0;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.compact-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.order-number-sm {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 13px;
+}
+
+.order-amount-sm {
+  font-weight: 600;
+  color: #059669;
+}
+
+.payment-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.payment-badge-sm.cash {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+}
+
+.payment-badge-sm.transfer {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+}
+
+/* Performance List Compact */
+.performance-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.performance-item-compact {
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.performance-item-compact:hover {
+  background: #f1f5f9;
+}
+
+.cashier-info-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cashier-name-compact {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.cashier-type-compact {
+  font-size: 16px;
+}
+
+.performance-stats-compact {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.performance-stats-compact span:first-child {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Empty States */
+.empty-state-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: #94a3b8;
+  text-align: center;
+  gap: 8px;
+}
+
+.empty-state-sm span {
+  font-size: 13px;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f1f5f9;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .stats-grid-compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+  
+  .stats-grid-compact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .dashboard-grid {
+    gap: 12px;
+  }
+  
+  .stats-value-compact {
+    font-size: 18px;
+  }
+  
+  .compact-table {
+    font-size: 12px;
+  }
+}

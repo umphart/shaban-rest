@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Cashiers from './pages/Cashiers';
+import Foods from './pages/Foods';
+import Orders from './pages/Orders';
+import CashierOrders from './pages/CashierOrders';
+import NewOrder from './pages/NewOrder';
+import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
+import './styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Toaster position="top-right" />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          }>
+            <Route index element={<Navigate to="/dashboard" replace />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="cashiers" element={<Cashiers />} />
+            <Route path="foods" element={<Foods />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="cashier-orders" element={<CashierOrders />} />
+            <Route path="new-order" element={<NewOrder />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

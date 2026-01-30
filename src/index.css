@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}/* Force Grid layout to work */
+.MuiGrid-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.MuiGrid-item {
+  display: block !important;
+}
+
+/* Ensure proper width */
+@media (min-width: 1200px) {
+  .MuiGrid-item-lg-8 {
+    width: 66.6667% !important;
+  }
+  
+  .MuiGrid-item-lg-4 {
+    width: 33.3333% !important;
+  }
+}

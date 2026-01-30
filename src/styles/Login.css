@@ -1,0 +1,207 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.login-branding {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .login-branding {
+    text-align: left;
+  }
+}
+
+.login-branding-avatar {
+  background-color: #c62828 !important;
+  width: 80px;
+  height: 80px;
+  margin-right: 1rem;
+}
+
+.login-branding-title {
+  font-family: 'Poppins', sans-serif;
+  color: #c62828;
+  font-weight: 700;
+  font-size: 2.5rem !important;
+}
+
+.login-branding-subtitle {
+  color: #666;
+  font-size: 1.25rem !important;
+}
+
+.login-welcome-title {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.75rem !important;
+}
+
+.login-welcome-text {
+  color: #666;
+  margin-bottom: 1.5rem !important;
+}
+
+.quick-login-label {
+  color: #666;
+  margin-bottom: 0.5rem !important;
+  font-weight: 500 !important;
+}
+
+.quick-login-button {
+  border-color: var(--role-color) !important;
+  color: inherit !important;
+  justify-content: flex-start !important;
+  text-transform: none !important;
+}
+
+.login-form-container {
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.login-form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-form-avatar {
+  background-color: #1a237e !important;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+}
+
+.login-form-title {
+  font-family: 'Poppins', sans-serif;
+  color: #1a237e;
+  margin-bottom: 0.5rem !important;
+  font-size: 2rem !important;
+}
+
+.login-form-subtitle {
+  color: #666;
+}
+
+.role-selection-title {
+  margin-bottom: 1rem !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500 !important;
+}
+
+.role-card {
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.role-card.selected {
+  border: 2px solid var(--role-accent-color);
+  background-color: var(--role-bg-color);
+}
+
+.role-card-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.role-icon {
+  margin-bottom: 0.5rem;
+}
+
+.role-title {
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+}
+
+.login-divider {
+  margin: 1.5rem 0 !important;
+}
+
+.login-divider-text {
+  color: #666 !important;
+}
+
+.login-error {
+  margin-bottom: 1.5rem !important;
+}
+
+.login-input-field {
+  margin: 1rem 0 !important;
+}
+
+.login-input-avatar {
+  width: 24px;
+  height: 24px;
+  background-color: #e0e0e0 !important;
+}
+
+.login-input-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 0.5rem;
+}
+
+.login-submit-button {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  background-color: #c62828 !important;
+  padding: 0.75rem !important;
+  font-size: 1.1rem !important;
+}
+
+.login-submit-button:hover {
+  background-color: #8e0000 !important;
+}
+
+.login-submit-button:disabled {
+  background-color: #ffcdd2 !important;
+  color: #666 !important;
+}
+
+.demo-credentials-label {
+  color: #666;
+  font-weight: 500 !important;
+}
+
+.demo-credentials-text {
+  color: #666;
+  display: block;
+  font-size: 0.75rem !important;
+}
+
+/* Role-specific colors */
+.role-cashier {
+  --role-color: #ffebee;
+  --role-accent-color: #c62828;
+  --role-bg-color: rgba(198, 40, 40, 0.05);
+}
+
+.role-transfer_cashier {
+  --role-color: #e3f2fd;
+  --role-accent-color: #2196f3;
+  --role-bg-color: rgba(33, 150, 243, 0.05);
+}
+
+.role-kitchen {
+  --role-color: #fff3e0;
+  --role-accent-color: #ff9800;
+  --role-bg-color: rgba(255, 152, 0, 0.05);
+}
+
+.role-admin {
+  --role-color: #e8eaf6;
+  --role-accent-color: #1a237e;
+  --role-bg-color: rgba(26, 35, 126, 0.05);
+}

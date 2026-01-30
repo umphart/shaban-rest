@@ -1,0 +1,970 @@
+/* POS Style Receipt - Thermal Printer Style */
+.receipt-container {
+  background: white;
+  padding: 8px;
+  width: 280px; /* Standard receipt width */
+  margin: 0 auto;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  border: 1px dashed #ccc;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.receipt-header {
+  text-align: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #000;
+}
+
+.restaurant-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.restaurant-address {
+  font-size: 9px;
+  color: #333;
+  margin-bottom: 1px;
+  line-height: 1.2;
+}
+
+.receipt-separator {
+  text-align: center;
+  margin: 4px 0;
+  color: #333;
+  letter-spacing: 1px;
+  font-size: 9px;
+}
+
+.receipt-title {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+/* Order Information */
+.receipt-info {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+  min-width: 70px;
+}
+
+.info-value {
+  text-align: right;
+  font-weight: bold;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Order Items */
+.order-items {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.order-items .receipt-title {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  padding-bottom: 1px;
+  border-bottom: 1px dotted #eee;
+  font-size: 10px;
+}
+
+.item-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 140px;
+}
+
+.item-quantity {
+  margin: 0 6px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.item-price {
+  text-align: right;
+  min-width: 60px;
+  font-weight: bold;
+}
+
+/* Totals */
+.receipt-totals {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #000;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+
+.total-label {
+  font-weight: bold;
+}
+
+.total-amount {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.receipt-totals .total-row:last-child {
+  font-size: 12px;
+  margin-top: 2px;
+  padding-top: 2px;
+  border-top: 1px solid #000;
+}
+
+/* Payment Info */
+.payment-info {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.payment-info .info-value {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #000;
+}
+
+/* Payment Status Badge */
+.payment-status {
+  display: inline-block;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 4px;
+  letter-spacing: 0.5px;
+}
+
+.payment-status.cash {
+  background: #f3f4f6;
+  color: #065f46;
+  border: 1px solid #d1d5db;
+}
+
+.payment-status.transfer {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.payment-status.pos {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* Barcode Section */
+.barcode-section {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+}
+
+.barcode {
+  font-family: 'Libre Barcode 39', monospace;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 4px 0;
+  line-height: 1;
+}
+
+.barcode-text {
+  font-size: 8px;
+  color: #666;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+.receipt-footer {
+  text-align: center;
+  color: #666;
+  font-size: 9px;
+  margin-top: 8px;
+}
+
+.thank-you {
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.time-stamp {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: #666;
+  text-align: center;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Print Styles */
+@media print {
+  .receipt-container {
+    border: none !important;
+    padding: 4px !important;
+    width: 80mm !important; /* Standard thermal paper width */
+    max-width: 80mm !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    font-size: 10px !important;
+  }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  
+  .receipt-container * {
+    color: black !important;
+    background: white !important;
+  }
+  
+  /* Cut line for thermal paper */
+  .receipt-container::after {
+    content: '';
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    border-top: 1px dashed #000;
+    text-align: center;
+    font-size: 8px;
+    color: #666;
+    padding-top: 4px;
+  }
+  
+  .receipt-container::after {
+    content: '--- CUT HERE ---';
+  }
+}
+
+/* Responsive */
+@media (max-width: 320px) {
+  .receipt-container {
+    width: 100%;
+    padding: 6px;
+  }
+  
+  .item-name {
+    max-width: 120px;
+  }
+}
+
+/* Dark mode for receipt */
+@media (prefers-color-scheme: dark) {
+  .receipt-container {
+    background: white !important;
+    color: black !important;
+    border-color: #333;
+  }
+  
+  .receipt-container * {
+    color: black !important;
+    background: white !important;
+  }
+}
+
+/* Ensure proper line breaks */
+.restaurant-address br {
+  display: block;
+  content: "";
+  margin: 0;
+}
+
+/* Compact layout for receipt */
+.receipt-container > * {
+  margin-bottom: 4px;
+}
+
+/* Make sure everything is compact */
+.receipt-container {
+  line-height: 1.1 !important;
+}
+
+/* Adjust spacing */
+.receipt-header,
+.receipt-info,
+.order-items,
+.receipt-totals,
+.payment-info,
+.barcode-section,
+.receipt-footer {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+}
+
+/* Optimize for thermal printing */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .receipt-container {
+    page-break-after: always;
+  }
+  
+  /* Hide everything except receipt */
+  body *:not(.receipt-container):not(.receipt-container *) {
+    display: none !important;
+  }
+}/* Print-only elements */
+.print-only {
+  display: none;
+}
+
+@media print {
+  .print-only {
+    display: block;
+  }
+  
+  .no-print {
+    display: none;
+  }
+}
+
+/* For barcode font if available */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
+
+/* Fallback for barcode font */
+.barcode {
+  font-family: 'Libre Barcode 39', 'Courier New', monospace;
+}
+
+/* If barcode font doesn't load */
+@supports not (font-family: 'Libre Barcode 39') {
+  .barcode {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+}
+/* Receipt Container */
+.receipt-container {
+  width: 80mm; /* Standard receipt width */
+  max-width: 80mm;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  background: white;
+  color: black;
+}
+
+/* Print-specific styles */
+@media print {
+  /* Hide everything except the receipt */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Only show the receipt container and its children */
+  .receipt-container,
+  .receipt-container * {
+    visibility: visible;
+  }
+  
+  /* Position the receipt at the top left */
+  .receipt-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    max-width: 80mm;
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+    background: white;
+  }
+  
+  /* Hide modal overlay and other UI elements */
+  .modal-overlay,
+  .new-order-container,
+  .modal-header,
+  .receipt-actions,
+  .modal-footer,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Show only print-specific elements */
+  .print-only {
+    display: block !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .receipt-container {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+}
+
+/* Non-print styles */
+@media screen {
+  .print-only {
+    display: none;
+  }
+}/* Receipt.css - Thermal Printer Optimized */
+
+/* Thermal printer receipt dimensions */
+.receipt-container {
+  width: 80mm; /* Standard thermal paper width */
+  max-width: 80mm;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1;
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+/* Copy specific styles */
+.customer-copy .copy-indicator {
+  background-color: #000;
+  color: white;
+  padding: 2px 0;
+  margin: 3px 0;
+  font-weight: bold;
+}
+
+.shaban-copy .copy-indicator {
+  background-color: #666;
+  color: white;
+  padding: 2px 0;
+  margin: 3px 0;
+  font-weight: bold;
+}
+
+/* Copy separator */
+.copy-separator {
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  font-size: 11px;
+}
+
+/* Common receipt elements */
+.restaurant-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.restaurant-address {
+  font-size: 10px;
+  margin: 1px 0;
+}
+
+.receipt-title {
+  font-weight: bold;
+  margin: 3px 0;
+  text-transform: uppercase;
+}
+
+.receipt-separator {
+  margin: 3px 0;
+  font-weight: bold;
+}
+
+/* Order info */
+.receipt-info {
+  text-align: left;
+  margin: 5px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+
+.info-label {
+  font-weight: bold;
+  min-width: 60px;
+}
+
+/* Order items */
+.order-items {
+  margin: 5px 0;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+  text-align: left;
+}
+
+.item-name {
+  flex: 2;
+  max-width: 70%;
+}
+
+.item-quantity {
+  flex: 0.5;
+  text-align: center;
+}
+
+.item-price {
+  flex: 1;
+  text-align: right;
+}
+
+/* Totals */
+.receipt-totals {
+  margin: 8px 0;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+
+.total-label {
+  font-weight: bold;
+}
+
+.total-amount {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Payment info */
+.payment-info {
+  margin: 5px 0;
+}
+
+.payment-status {
+  margin-left: 5px;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+.payment-status.cash {
+  background: #000;
+  color: white;
+}
+
+.payment-status.transfer {
+  background: #666;
+  color: white;
+}
+
+.payment-status.pos {
+  background: #333;
+  color: white;
+}
+
+/* Barcode */
+.barcode-section {
+  margin: 8px 0;
+}
+
+.barcode {
+  font-family: 'Libre Barcode 39 Text', monospace;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.barcode-text {
+  font-size: 10px;
+  margin-top: -5px;
+}
+
+/* Footer */
+.receipt-footer {
+  margin: 8px 0;
+}
+
+.thank-you {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.footer-text {
+  font-size: 10px;
+  margin: 2px 0;
+}
+
+.time-stamp {
+  font-size: 9px;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* PRINT STYLES for Thermal Printer */
+@media print {
+  /* Reset all page margins for thermal printer */
+  @page {
+    margin: 0;
+    size: 80mm auto;
+  }
+  
+  /* Hide everything except receipts */
+  body * {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Show only receipt containers */
+  .receipt-container,
+  .receipt-container * {
+    visibility: visible;
+  }
+  
+  /* Position receipts properly */
+  .receipt-container {
+    position: relative;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    min-width: 80mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 5px !important;
+    left: 0;
+    top: 0;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+  
+  /* Force black text */
+  * {
+    color: black !important;
+    background: white !important;
+  }
+  
+  /* Hide modal and UI elements */
+  .modal-overlay,
+  .new-order-container,
+  .modal-header,
+  .modal-container,
+  .receipt-actions,
+  .modal-footer,
+  button,
+  .no-print {
+    display: none !important;
+  }
+}/* Receipt.css - Thermal Printer Optimized */
+
+/* Thermal printer receipt dimensions */
+.receipt-container {
+  width: 80mm; /* Standard thermal paper width */
+  max-width: 80mm;
+  min-width: 80mm;
+  margin: 0 auto;
+  padding: 0 2mm;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1;
+  background: white;
+  color: black;
+  text-align: left;
+}
+
+/* Copy specific styles */
+.copy-indicator {
+  text-align: center;
+  font-weight: bold;
+  margin: 3px 0;
+  padding: 2px 0;
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+  text-transform: uppercase;
+}
+
+.customer-copy .copy-indicator {
+  background-color: #f0f0f0;
+}
+
+.shaban-copy .copy-indicator {
+  background-color: #e0e0e0;
+}
+
+/* Copy separator */
+.copy-separator {
+  font-weight: bold;
+  margin: 5px 0;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Common receipt elements */
+.restaurant-name {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 3px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.restaurant-address {
+  font-size: 9px;
+  margin: 1px 0;
+  text-align: center;
+}
+
+.receipt-title {
+  font-weight: bold;
+  margin: 3px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.receipt-separator {
+  margin: 2px 0;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Order info */
+.receipt-info {
+  margin: 5px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1px 0;
+}
+
+.info-label {
+  font-weight: bold;
+  min-width: 70px;
+}
+
+/* Order items */
+.order-items {
+  margin: 5px 0;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+
+.item-name {
+  flex: 2;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-quantity {
+  flex: 0.5;
+  text-align: center;
+  min-width: 25px;
+}
+
+.item-price {
+  flex: 1;
+  text-align: right;
+  min-width: 50px;
+}
+
+/* Totals */
+.receipt-totals {
+  margin: 8px 0;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+}
+
+.total-label {
+  font-weight: bold;
+}
+
+.total-amount {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Payment info */
+.payment-info {
+  margin: 5px 0;
+}
+
+.payment-status {
+  margin-left: 5px;
+  padding: 1px 4px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 9px;
+}
+
+/* Barcode */
+.barcode-section {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.barcode {
+  font-family: 'Libre Barcode 39 Text', monospace;
+  font-size: 28px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.barcode-text {
+  font-size: 9px;
+  margin-top: -2px;
+}
+
+/* Footer */
+.receipt-footer {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.thank-you {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.footer-text {
+  font-size: 9px;
+  margin: 1px 0;
+}
+
+.time-stamp {
+  font-size: 8px;
+  margin-top: 5px;
+  opacity: 0.7;
+}
+
+/* PRINT STYLES for Thermal Printer */
+@media print {
+  /* Reset all page margins for thermal printer */
+  @page {
+    margin: 0mm !important;
+    size: 80mm auto !important;
+    padding: 0 !important;
+  }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 80mm !important;
+    font-family: 'Courier New', monospace !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Ensure receipt containers are visible */
+  .receipt-container {
+    width: 80mm !important;
+    max-width: 80mm !important;
+    min-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 0 2mm !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    float: none !important;
+  }
+  
+  /* Last receipt shouldn't break */
+  .receipt-container:last-of-type {
+    page-break-after: avoid !important;
+  }
+  
+  /* Force black on white */
+  * {
+    color: black !important;
+    background-color: white !important;
+    background-image: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide unnecessary elements */
+  .no-print,
+  button,
+  .modal-overlay,
+  .modal-container,
+  .modal-header,
+  .receipt-actions,
+  .modal-footer {
+    display: none !important;
+  }
+}
+
+/* Screen styles */
+@media screen {
+  .receipt-container {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px auto;
+  }
+}
